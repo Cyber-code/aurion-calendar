@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html,body{height: 100%;}
+/*
+body{
+    background-color:  rgb(233, 226, 205)!important;
+    /*background-color: #3498db!important;
+}*/
+
+body{
+    background-image: url("../images/Aurion_Calendar_background.jpg");
+    background-repeat: no-repeat;
+    background-position: left; /* Center the image */
+    background-size: 110% 110%; /* Resize the background image to cover the entire container */
+    font-family: 'Open Sans', sans-serif!important;
+}
+
+h1{
+    font-size: 50px;
+}
+
+.allForm{
+    padding-top: 60px;
+}
+
+#logo{
+    height: 400px;
+    width: auto;
+}
+.creator{
+    color: #88bbd6;
+}
+
+.version{
+    color: gray;
+}
+.connexionContainer{
+    margin-top: 25px;
+    background-color: #e6edff;
+    box-shadow: 0 10px 15px 3px rgba(0, 0, 0, 0.2);
+    /*height: 284px;*/
+}
+
+#DateSelector{
+    margin-bottom: 10px;
+}
+
+#loader{
+    position: relative;
+    width: 15%;
+    height: auto;
+}
+
+#btnLog{
+    background-color: #29a744;
+    padding: 15px;
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.listChoix{
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+.listChoix li.active{
+    background-color: #88bbd6;
+    border: #383836 2px solid;
+    opacity: 1;
+    transition: all ease-in .3s;
+}
+.listChoix li{
+    display: inline-block;
+    padding: 15px;
+    background-color: #cd6c77;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 10px;
+    transition: all ease-out .3s;
+}
+
+.listChoix li:first-child{
+    margin-right: 10px;
+}
+
+.hide{
+    display: none!important;
+}
+
+.fa-check-circle{
+    margin-right: 10px;
+    color: green;
+    font-size: 1.5em;
+}
+
+.status{
+    font-size: 18px;
+}
+
+#boxAlert{
+    position: fixed;
+    opacity: 1;
+	width: 100 rem;
+	z-index: 1000;
+	margin-left: auto;
+    margin-right: auto;
+    top: 0;
+	left: 0;
+	right: 0;
+    margin-top: 10px;
+
+    -webkit-transition: transform .5s ease,opacity .5s ease;
+	-moz-transition: transform .5s ease,opacity .5s ease;
+	-ms-transition: transform .5s ease,opacity .5s ease;
+    transition: transform .5s ease,opacity .5s ease;
+    /*top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;*/
+}
+.alertHide{
+    opacity: 0!important;
+    transform: translateY(-100%)!important;
+
+    -webkit-transition: transform .5s ease,opacity .5s ease;
+	-moz-transition: transform .5s ease,opacity .5s ease;
+	-ms-transition: transform .5s ease,opacity .5s ease;
+    transition: transform .5s ease,opacity .5s ease;
+}
+
+.bug{
+    font-size: 12px;
+}
+@media screen and (max-width: 1000px) {
+    #logo{
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media screen and (max-width: 700px) {
+    #logo{
+        height: 200px;
+        width: auto;   
+    }
+}
+@media screen and (max-width: 450px) {
+    .listChoix li:first-child{
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .allForm{
+        padding-top: 20px;
+    }
+
+    .creator{
+        font-size: 15px;
+        padding: 7px;
+    }
+
+    .listChoix li{
+        display: block;
+        width: 100%;
+    }
+
+  }

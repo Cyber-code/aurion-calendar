@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>AURION CALENDAR</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='favicon/apple-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='favicon/apple-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='favicon/apple-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='favicon/apple-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='favicon/apple-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='favicon/apple-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='favicon/apple-icon-152x152.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-icon-180x180.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ url_for('static', filename='favicon/android-icon-192x192.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='favicon/favicon-96x96.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <meta charset="utf-8" />
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='icone/css/fontawesome-all.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css" />
+        
+<!--
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../static/icone/css/fontawesome-all.css" rel="stylesheet" type="text/css" />
+        <link href="../static/css/main.css" rel="stylesheet" type="text/css" />-->
+    </head>
+    <body>
+            <div class="row justify-content-center alertHide" id="boxAlert">
+                    <div class="col-sm-12 col-md-5">
+                       <div class="alert alert-danger" role="alert">
+                          <h5 class="alert-heading">Erreur</h5>
+                          <hr>
+                          <p id="MessageAlert"></p>
+                          <p>Rendez vous sur <a href="{{url_for('envoye_erreur')}}">cette page</a> si l'erreur continue de s'afficher</p>
+                       </div>
+                    </div>
+                 </div>
+        <div class="container allForm">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-5 align-self-center ">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" id="logo">
+                </div>
+               <div class="col-10 col-sm-10 col-md-12 col-lg-5 connexionContainer align-self-center">
+                    <div class="row justify-content-center">
+                            <div class=" col-md-12 col-sm-12 ">
+                                <h1 class="text-center" id="TitreInfo">Calendrier</h1>
+                            </div>
+                    </div>
+                    <div class="loginForm">
+                            <div class="row justify-content-center">
+                                <div class=" col-md-9 col-sm-11 input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    </div> 
+                                    <input class="form-control" id="email" name="email" placeholder="ISEN p6****" type="email" required>
+                                </div>
+                                    <div class=" col-md-9 col-sm-12 input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div> 
+                                        <input class="form-control" id="password" name="password" placeholder="Mot de passe" type="password" required>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <ul class="listChoix">
+                                            <li value="Tweek" class="active"> Cette semaine </li>
+                                            <li value="Nweek" class="inactive"> La semaine prochaine </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <div class="row justify-content-center" >
+                                <div class="btnMenu" >
+                                    <button class="btn btn-success" id="btnLog">Récupérer le calendrier</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row justify-content-center text-center">
+                                <p class="creator"><span class="version" >V{{version}}</span> | crée par Clément Sanchez / Design by txttim</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                    <a class="bug" href="{{url_for('envoye_erreur')}}">Vous avez une erreur ? un bug ? M'envoyer un message </a>
+                                </div>
+                   </div>
+                  <br>
+                  <div class="row justify-content-center">
+                      <div class="col-12 hide" id="boxMenu">
+                            <div class="row">
+                                    <p> <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-double-ring" id="loader"><circle cx="50" cy="50" ng-attr-r="{{config.radius}}" ng-attr-stroke-width="{{config.width}}" ng-attr-stroke="{{config.c1}}" ng-attr-stroke-dasharray="{{config.dasharray}}" fill="none" stroke-linecap="round" r="40" stroke-width="4" stroke="#ff727d" stroke-dasharray="62.83185307179586 62.83185307179586" transform="rotate(287.787 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle><circle cx="50" cy="50" ng-attr-r="{{config.radius2}}" ng-attr-stroke-width="{{config.width}}" ng-attr-stroke="{{config.c2}}" ng-attr-stroke-dasharray="{{config.dasharray2}}" ng-attr-stroke-dashoffset="{{config.dashoffset2}}" fill="none" stroke-linecap="round" r="35" stroke-width="4" stroke="#000000" stroke-dasharray="54.97787143782138 54.97787143782138" stroke-dashoffset="54.97787143782138" transform="rotate(-287.787 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;-360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg>
+                                    <i class="fas fa-check-circle hide"></i>Connexion en cours ...</p>
+                            </div>
+                      </div>
+                        
+                  </div>
+               </div>
+
+            </div>
+         </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+    </body>
+</html>
