@@ -167,7 +167,6 @@ class Aurion():
             createICS(ev['type'],ev['debut'],ev['fin'],ev['cours'],ev['salle'],ev['prof'])
         uid = uuid4()
         
-        #with open('var/www/aurion.com/aurionapp/static/ISEN_emploi'+ str(uid) + '.ics', 'w') as f:
         with open('static/ISEN_emploi'+ str(uid) + '.ics', 'w') as f:
             f.writelines(self.c)
             f.close()
